@@ -13,3 +13,9 @@ header .logo {
 #api_status.available {
     background-color: #ff545f;
 }
+
+#api_status {
+    background-color: red;
+    border-radius: 50%;
+    right: 30px;
+}

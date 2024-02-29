@@ -4,7 +4,10 @@ $(document).ready(function() {
         const get_id = $(this).attr('data-id');
         const get_name = $(this).attr('data-name');
         if ($(this).is(':checked')) {
-            checkedAmenities = get_id;
+            checkedAmenities[get_id] = get_name;
+        }
+        else {
+            delete checkedAmenities[get_id];
         }
 
         const all_amenities = [];
@@ -18,8 +21,8 @@ $(document).ready(function() {
         url: 'http://0.0.0.0:5001/api/v1/status/',
         method: 'GET',
         success: function(response){
-            if (response.status == 'OK') {
-                $('#api_status').addClass('available');
+            if (response.status === 'OK') {
+                $('div#api_status').addClass('available');
             }
             else {
                 $('#api_status').removeClass('available');

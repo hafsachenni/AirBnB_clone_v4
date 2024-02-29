@@ -25,7 +25,7 @@ $(document).ready(function() {
                 $('div#api_status').addClass('available');
             }
             else {
-                $('#api_status').removeClass('available');
+                $('div#api_status').removeClass('available');
             }
         },
     });

@@ -53,6 +53,7 @@ $(document).ready(function() {
                     ${place.description}
                 </div>
             </article>`;
+            $('section.places').empty();
             $('section.places').append(structuredHtml);
         }
     }

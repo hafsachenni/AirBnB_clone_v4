@@ -35,7 +35,7 @@ $(document).ready(function() {
     url: 'http://0.0.0.0:5001/api/v1/places_search/',
     method: 'POST',
     contentType: 'application/json',
-    data: JSON.stringify({}),
+    data: JSON.stringify(filters),
     success: function (data) {
         for (let i = 0; i < data.length; i++) {
             const place = data[i];

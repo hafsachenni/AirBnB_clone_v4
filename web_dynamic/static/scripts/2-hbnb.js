@@ -28,5 +28,8 @@ $(document).ready(function() {
                 $('div#api_status').removeClass('available');
             }
         },
+        error: function() {
+            console.log('error in api request')
+        }
     });
 });

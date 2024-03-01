@@ -17,7 +17,7 @@ $(document).ready(function() {
         $('.amenities h4').text(all_amenities.join(', '));
 
     });
-    $.ajax( {
+    $.ajax({
         url: 'http://0.0.0.0:5001/api/v1/status/',
         method: 'GET',
         success: function(response){
@@ -29,15 +29,14 @@ $(document).ready(function() {
             }
         },
     });
-});
 
-$.ajax( {
+    $.ajax({
     url: 'http://0.0.0.0:5001/api/v1/places_search/',
     method: 'POST',
     contentType: 'application/json',
     data: JSON.stringify({}),
     success: function (data) {
-        for (let i = 0; i < data.lenght; i++) {
+        for (let i = 0; i < data.length; i++) {
             const place = data[i];
             const structuredHtml = `<article>
                 <div class="title_box">
@@ -59,4 +58,5 @@ $.ajax( {
             $('section.places').append(structuredHtml);
         }
     }
+});
 });

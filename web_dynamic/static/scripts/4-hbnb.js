@@ -37,6 +37,7 @@ $(document).ready(function() {
     contentType: 'application/json',
     data: JSON.stringify(filters),
     success: function (data) {
+        $('section.places').empty();
         for (let i = 0; i < data.length; i++) {
             const place = data[i];
             const structuredHtml = `<article>
@@ -52,8 +53,7 @@ $(document).ready(function() {
                 <div class="description">
                     ${place.description}
                 </div>
-            </article>`;
-            $('section.places').empty();
+            </article>`; 
             $('section.places').append(structuredHtml);
         }
     }

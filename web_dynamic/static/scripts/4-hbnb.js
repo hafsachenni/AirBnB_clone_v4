@@ -62,7 +62,7 @@ $(document).ready(function() {
     });
     };
     $('button').on("click", function() {
-        const filters = {amenities: Object.keys(all_amenities)};
+        const filters = {amenities: Object.keys(checkedAmenities)};
         placesSearch(filters);
     });
     placesSearch();
